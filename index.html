@@ -65,15 +65,15 @@
 
           <!-- waitlist mode -->
           <div class="only-waitlist signup" id="notify">
-            <form class="signup-form" data-buttondown
+            <form class="signup-form" data-buttondown novalidate
                   action="https://buttondown.com/api/emails/embed-subscribe/cloudlist.app"
                   method="post" target="bd-sink">
-              <input type="email" name="email" placeholder="your email" aria-label="your email" required>
-              <button type="submit" class="button button--glass">get notified</button>
+              <input type="email" name="email" placeholder="your email" aria-label="your email" autocomplete="email">
+              <button type="submit">get notified</button>
             </form>
             <div class="signup-done" hidden>
-              <p>you're on the list.</p>
-              <p class="signup-done-note">we'll email you once, when it's ready.</p>
+              <svg class="done-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.2 5.2L20 7"/></svg>
+              <span>you're on the list. we'll email you once.</span>
             </div>
             <p class="signup-error" hidden>that didn't go through. try again, or email hello@cloudlist.app</p>
             <p class="cta-note">one email when it launches. nothing else.</p>
@@ -328,15 +328,15 @@
         <h2 class="display-sm reveal section-head">be there when it opens</h2>
         <p class="sub sub--wide reveal">leave your email and we'll tell you the moment cloudlist is ready.</p>
         <div class="signup reveal">
-          <form class="signup-form" data-buttondown
+          <form class="signup-form" data-buttondown novalidate
                 action="https://buttondown.com/api/emails/embed-subscribe/cloudlist.app"
                 method="post" target="bd-sink">
-            <input type="email" name="email" placeholder="your email" aria-label="your email" required>
-            <button type="submit" class="button button--glass">get notified</button>
+            <input type="email" name="email" placeholder="your email" aria-label="your email" autocomplete="email">
+            <button type="submit">get notified</button>
           </form>
           <div class="signup-done" hidden>
-            <p>you're on the list.</p>
-            <p class="signup-done-note">we'll email you once, when it's ready.</p>
+            <svg class="done-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.2 5.2L20 7"/></svg>
+            <span>you're on the list. we'll email you once.</span>
           </div>
           <p class="signup-error" hidden>that didn't go through. try again, or email hello@cloudlist.app</p>
           <p class="cta-note">one email when it launches. nothing else.</p>
@@ -368,8 +368,8 @@
       </nav>
 
       <nav class="footer-col" aria-label="legal">
-        <a href="/terms">terms</a>
-        <a href="/privacy">privacy</a>
+        <a href="terms.html">terms</a>
+        <a href="privacy.html">privacy</a>
         <a href="mailto:hello@cloudlist.app">contact</a>
       </nav>
 
@@ -537,15 +537,51 @@
   // ---------- waitlist form ----------
   // posts natively into a hidden iframe. fetch() hung in safari on v1,
   // so this pattern is deliberate. do not "modernise" it.
-  Array.prototype.forEach.call(document.querySelectorAll('form[data-buttondown]'), function (form) {
-    form.addEventListener('submit', function () {
-      var input = form.querySelector('input[type="email"]');
-      if (!input.value) return;
+  var looksLikeEmail = function (v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
+  };
 
-      var wrap = form.parentNode;
-      var done = wrap.querySelector('.signup-done');
-      var note = wrap.querySelector('.cta-note');
-      var btn  = form.querySelector('button');
+  Array.prototype.forEach.call(document.querySelectorAll('form[data-buttondown]'), function (form) {
+    var wrap  = form.parentNode;
+    var input = form.querySelector('input[type="email"]');
+    var btn   = form.querySelector('button');
+    var done  = wrap.querySelector('.signup-done');
+    var note  = wrap.querySelector('.cta-note');
+    var error = wrap.querySelector('.signup-error');
+
+    var showError = function (msg) {
+      if (!error) return;
+      error.textContent = msg;
+      error.hidden = false;
+      form.classList.add('has-error');
+    };
+
+    var clearError = function () {
+      if (!error) return;
+      error.hidden = true;
+      form.classList.remove('has-error');
+    };
+
+    input.addEventListener('input', clearError);
+
+    form.addEventListener('submit', function (e) {
+      var value = input.value.trim();
+
+      if (!value) {
+        e.preventDefault();
+        showError('pop your email in first, then tap get notified.');
+        input.focus();
+        return;
+      }
+
+      if (!looksLikeEmail(value)) {
+        e.preventDefault();
+        showError('that address looks like it has a typo. check it and try again.');
+        input.focus();
+        return;
+      }
+
+      clearError();
 
       // never disable the input: disabled fields are dropped from the post
       btn.textContent = 'got it';
