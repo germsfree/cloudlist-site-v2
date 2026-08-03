@@ -49,7 +49,7 @@
           <img src="icon.png" alt="" width="34" height="34">
           <span>cloudlist</span>
         </div>
-        <h1 class="display lift" style="--lift:2">a to-do list that actually gets your brain</h1>
+        <h1 class="display lift" style="--lift:2">a to-do list<br>that actually gets your brain</h1>
         <p class="lede lift" style="--lift:3">built by someone with adhd,<br>for people with adhd.</p>
         <div class="lift" style="--lift:4">
           <a class="button button--glass" href="https://apps.apple.com/app/id6772194035" target="_blank" rel="noopener">
@@ -69,19 +69,32 @@
   </section>
 
   <!-- ============ 2. the problem ============ -->
-  <section class="band band--blush problem">
+  <section class="band band--blush problem" id="problem">
     <div class="clouds" aria-hidden="true">
-      <svg class="cloud cloud--1" viewBox="0 0 120 70"><path d="M28 62c-12 0-22-8-22-19S16 24 28 24c2-12 13-21 26-21 12 0 22 7 25 18 2-.6 4-1 6-1 11 0 20 8 20 19s-9 19-20 19H28z"/></svg>
-      <svg class="cloud cloud--2" viewBox="0 0 120 70"><path d="M28 62c-12 0-22-8-22-19S16 24 28 24c2-12 13-21 26-21 12 0 22 7 25 18 2-.6 4-1 6-1 11 0 20 8 20 19s-9 19-20 19H28z"/></svg>
-      <svg class="cloud cloud--3" viewBox="0 0 120 70"><path d="M28 62c-12 0-22-8-22-19S16 24 28 24c2-12 13-21 26-21 12 0 22 7 25 18 2-.6 4-1 6-1 11 0 20 8 20 19s-9 19-20 19H28z"/></svg>
-      <svg class="cloud cloud--4" viewBox="0 0 120 70"><path d="M28 62c-12 0-22-8-22-19S16 24 28 24c2-12 13-21 26-21 12 0 22 7 25 18 2-.6 4-1 6-1 11 0 20 8 20 19s-9 19-20 19H28z"/></svg>
+      <svg class="cloud" data-rate="0.16" style="--x:6%;  --y:88%; --w:58px;  --o:0.55" viewBox="0 0 120 70"><path d="M28 62c-12 0-22-8-22-19S16 24 28 24c2-12 13-21 26-21 12 0 22 7 25 18 2-.6 4-1 6-1 11 0 20 8 20 19s-9 19-20 19H28z"/></svg>
+      <svg class="cloud" data-rate="0.28" style="--x:88%; --y:80%; --w:44px;  --o:0.45" viewBox="0 0 120 70"><path d="M28 62c-12 0-22-8-22-19S16 24 28 24c2-12 13-21 26-21 12 0 22 7 25 18 2-.6 4-1 6-1 11 0 20 8 20 19s-9 19-20 19H28z"/></svg>
+      <svg class="cloud" data-rate="0.09" style="--x:20%; --y:96%; --w:34px;  --o:0.6"  viewBox="0 0 120 70"><path d="M28 62c-12 0-22-8-22-19S16 24 28 24c2-12 13-21 26-21 12 0 22 7 25 18 2-.6 4-1 6-1 11 0 20 8 20 19s-9 19-20 19H28z"/></svg>
+      <svg class="cloud" data-rate="0.36" style="--x:74%; --y:100%; --w:66px; --o:0.4"  viewBox="0 0 120 70"><path d="M28 62c-12 0-22-8-22-19S16 24 28 24c2-12 13-21 26-21 12 0 22 7 25 18 2-.6 4-1 6-1 11 0 20 8 20 19s-9 19-20 19H28z"/></svg>
+      <svg class="cloud" data-rate="0.22" style="--x:44%; --y:104%; --w:40px; --o:0.5"  viewBox="0 0 120 70"><path d="M28 62c-12 0-22-8-22-19S16 24 28 24c2-12 13-21 26-21 12 0 22 7 25 18 2-.6 4-1 6-1 11 0 20 8 20 19s-9 19-20 19H28z"/></svg>
+      <svg class="cloud" data-rate="0.13" style="--x:60%; --y:92%; --w:30px;  --o:0.62" viewBox="0 0 120 70"><path d="M28 62c-12 0-22-8-22-19S16 24 28 24c2-12 13-21 26-21 12 0 22 7 25 18 2-.6 4-1 6-1 11 0 20 8 20 19s-9 19-20 19H28z"/></svg>
+      <svg class="cloud" data-rate="0.31" style="--x:33%; --y:84%; --w:26px;  --o:0.5"  viewBox="0 0 120 70"><path d="M28 62c-12 0-22-8-22-19S16 24 28 24c2-12 13-21 26-21 12 0 22 7 25 18 2-.6 4-1 6-1 11 0 20 8 20 19s-9 19-20 19H28z"/></svg>
     </div>
 
-    <div class="wrap narrow center problem-copy">
-      <h2 class="display-sm reveal section-head">most to-do apps assume you wake up the same person every day</h2>
-      <p class="body reveal">so the list stays the same whether you slept nine hours or three. the task you dreaded on monday is still sitting there on thursday, in the same font, at the same size, asking the same thing.</p>
-      <p class="body reveal">and when you can't face it, the app has nothing to say except a number going up.</p>
-      <p class="pull reveal">cloudlist starts somewhere else.<br><strong>it asks how you are first.</strong></p>
+    <div class="wrap problem-copy">
+      <h2 class="display-sm center reveal section-head">most to-do apps assume you wake up the same person every day</h2>
+
+      <div class="problem-lines">
+        <p class="line reveal">so the list stays the same whether you slept nine hours or three.</p>
+        <p class="line reveal">the task you dreaded on monday is still sitting there on thursday.</p>
+        <p class="line line--em reveal">in the same font, at the same size, asking the same thing.</p>
+        <p class="line reveal">and when you can't face it, the app has nothing to say except a number going up.</p>
+      </div>
+
+      <div class="problem-turn reveal">
+        <span class="turn-rule" aria-hidden="true"></span>
+        <p class="turn-lead">cloudlist starts somewhere else.</p>
+        <p class="turn-line">it asks how you are first.</p>
+      </div>
     </div>
   </section>
 
@@ -147,28 +160,54 @@
       <p class="sub sub--wide center reveal">four things that make the day harder than it looks, and what cloudlist does about each.</p>
 
       <div class="cards">
-        <article class="card reveal" tabindex="0">
-          <p class="card-num">01</p>
-          <h3>task initiation paralysis</h3>
-          <div class="card-body"><p>knowing what to do and being unable to start is not laziness, it's the gap between intention and action. splitting a task into steps closes that gap.</p></div>
+        <article class="card reveal" tabindex="0" aria-label="task initiation paralysis">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <p class="card-num">01</p>
+              <h3>task initiation paralysis</h3>
+            </div>
+            <div class="card-face card-back">
+              <p>knowing what to do and being unable to start is not laziness, it's the gap between intention and action. splitting a task into steps closes that gap.</p>
+            </div>
+          </div>
         </article>
-        <article class="card reveal" tabindex="0">
-          <p class="card-num">02</p>
-          <h3>time blindness</h3>
-          <div class="card-body"><p>half an hour and half a day feel the same from the inside. every task carries a time estimate, and focus mode runs a timer sized to the attention span you have.</p></div>
+
+        <article class="card reveal" tabindex="0" aria-label="time blindness">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <p class="card-num">02</p>
+              <h3>time blindness</h3>
+            </div>
+            <div class="card-face card-back">
+              <p>half an hour and half a day feel the same from the inside. every task carries a time estimate, and focus mode runs a timer sized to the attention span you have.</p>
+            </div>
+          </div>
         </article>
-        <article class="card reveal" tabindex="0">
-          <p class="card-num">03</p>
-          <h3>out of sight, out of mind</h3>
-          <div class="card-body"><p>a task you can't see may as well not exist. anything untouched for five days comes back on its own, without a telling-off.</p></div>
+
+        <article class="card reveal" tabindex="0" aria-label="out of sight, out of mind">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <p class="card-num">03</p>
+              <h3>out of sight, out of mind</h3>
+            </div>
+            <div class="card-face card-back">
+              <p>a task you can't see may as well not exist. anything untouched for five days comes back on its own, without a telling-off.</p>
+            </div>
+          </div>
         </article>
-        <article class="card reveal" tabindex="0">
-          <p class="card-num">04</p>
-          <h3>overwhelm shutdown</h3>
-          <div class="card-body"><p>twenty things reads as one impossible thing. cloudlist shows you what fits and quietly holds the rest until you're ready.</p></div>
+
+        <article class="card reveal" tabindex="0" aria-label="overwhelm shutdown">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <p class="card-num">04</p>
+              <h3>overwhelm shutdown</h3>
+            </div>
+            <div class="card-face card-back">
+              <p>twenty things reads as one impossible thing. cloudlist shows you what fits and quietly holds the rest until you're ready.</p>
+            </div>
+          </div>
         </article>
       </div>
-      <p class="cards-hint center">hover a card to read more</p>
     </div>
   </section>
 
@@ -179,11 +218,11 @@
         <div class="founder-mark" aria-hidden="true">
           <img src="icon.png" alt="" width="60" height="60">
         </div>
-        <p class="founder-open">i built cloudlist because nothing else worked for my adhd brain.</p>
+        <p class="founder-open">i made cloudlist because nothing else ever worked for the way my brain works.</p>
         <div class="founder-body">
-          <p>every task app assumed i'd remember to open it. every planner assumed i had linear focus. every productivity system assumed guilt and streaks would motivate me, and instead they crushed me on the days i couldn't keep up.</p>
-          <p>after years of trying to make other apps work, a friend told me to just build the thing i needed. so i did.</p>
-          <p>cloudlist is for people whose brains work like mine. warm, forgiving, quietly effective.</p>
+          <p>every task app assumed i would remember to open it. every planner assumed i had linear focus. every system assumed guilt and streaks would push me forward, and instead they flattened me on the days i could not keep up.</p>
+          <p>after years of trying to bend myself into other people's apps, a friend told me to stop and build the one i actually needed. so that is what i did.</p>
+          <p>cloudlist is for people whose brains work like mine. warm, forgiving, and quietly effective on the days that are hard.</p>
         </div>
         <div class="founder-sign">
           <p class="founder-name">germaine</p>
@@ -308,7 +347,6 @@
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ---------- hero load sequence ----------
-  // fires on load rather than on scroll, so it is actually seen
   window.requestAnimationFrame(function () {
     document.body.classList.add('is-ready');
   });
@@ -326,15 +364,45 @@
       });
     }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
 
-    var seen = [];
     Array.prototype.forEach.call(reveals, function (el) {
-      var parent = el.parentNode;
-      var i = seen.indexOf(parent);
-      if (i === -1) { seen.push(parent); i = seen.length - 1; seen[i] = parent; parent.__n = 0; }
-      el.style.transitionDelay = ((parent.__n || 0) * 0.08) + 's';
-      parent.__n = (parent.__n || 0) + 1;
+      var p = el.parentNode;
+      p.__n = (p.__n || 0);
+      el.style.transitionDelay = (p.__n * 0.09) + 's';
+      p.__n++;
       revealObserver.observe(el);
     });
+  }
+
+  // ---------- clouds drift upward with scroll ----------
+  var problem = document.getElementById('problem');
+  var clouds = document.querySelectorAll('.cloud');
+
+  if (problem && clouds.length && !reduced) {
+    var ticking = false;
+
+    var placeClouds = function () {
+      var rect = problem.getBoundingClientRect();
+      var vh = window.innerHeight;
+      // 0 when the section first enters, 1 when it has fully left
+      var progress = (vh - rect.top) / (vh + rect.height);
+      progress = Math.max(0, Math.min(1, progress));
+
+      Array.prototype.forEach.call(clouds, function (c) {
+        var rate = parseFloat(c.getAttribute('data-rate')) || 0.2;
+        var travel = (rect.height + vh) * rate;
+        c.style.transform = 'translate3d(0,' + (-progress * travel) + 'px,0)';
+      });
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(placeClouds);
+    }, { passive: true });
+
+    window.addEventListener('resize', placeClouds, { passive: true });
+    placeClouds();
   }
 
   // ---------- pinned phone: crossfade between two stacked layers ----------
@@ -361,13 +429,9 @@
         layers[top].classList.remove('is-on');
         top = next;
       };
-      // only fade once the new image has actually decoded
       el.src = src;
-      if (el.decode) {
-        el.decode().then(reveal).catch(reveal);
-      } else {
-        el.onload = reveal;
-      }
+      if (el.decode) { el.decode().then(reveal).catch(reveal); }
+      else { el.onload = reveal; }
     };
 
     var blockObserver = new IntersectionObserver(function (entries) {
@@ -381,6 +445,16 @@
 
     Array.prototype.forEach.call(blocks, function (b) { blockObserver.observe(b); });
   }
+
+  // ---------- flip cards: tap on touch, hover handled in css ----------
+  var cards = document.querySelectorAll('.card');
+  Array.prototype.forEach.call(cards, function (card) {
+    var flip = function () { card.classList.toggle('is-flipped'); };
+    card.addEventListener('click', flip);
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
+    });
+  });
 
   // ---------- faq accordion ----------
   var questions = document.querySelectorAll('.qa-q');
