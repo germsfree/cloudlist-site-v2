@@ -21,7 +21,7 @@
 <link rel="apple-touch-icon" href="icon.png">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="mode-waitlist">
 
 <!-- ============ nav ============ -->
 <nav class="nav" aria-label="main">
@@ -35,7 +35,8 @@
       <a href="#why">why</a>
       <a href="#faq">faq</a>
     </div>
-    <a class="nav-cta" href="https://apps.apple.com/app/id6772194035" target="_blank" rel="noopener">download</a>
+    <a class="nav-cta only-download" href="https://apps.apple.com/app/id6772194035" target="_blank" rel="noopener">download</a>
+    <a class="nav-cta only-waitlist" href="#notify">get notified</a>
   </div>
 </nav>
 
@@ -52,12 +53,31 @@
         <h1 class="display lift" style="--lift:2">a to-do list<br>that actually gets your brain</h1>
         <p class="lede lift" style="--lift:3">built by someone with adhd,<br>for people with adhd.</p>
         <div class="lift" style="--lift:4">
-          <a class="button button--glass" href="https://apps.apple.com/app/id6772194035" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="button-mark">
-              <path d="M16.36 12.72c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.28-1.61 2.8-.41 6.93 1.15 9.2.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.74 2.98-.74 1.39 0 1.78.74 3 .72 1.24-.02 2.02-1.13 2.78-2.24.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.4-.92-2.43-3.65zM14.1 5.9c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.68-1.09 1.77-.95 2.81 1.02.08 2.05-.52 2.68-1.28z"/>
-            </svg>
-            download for iphone
-          </a>
+          <!-- download mode -->
+          <div class="only-download">
+            <a class="button button--glass" href="https://apps.apple.com/app/id6772194035" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="button-mark">
+                <path d="M16.36 12.72c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.28-1.61 2.8-.41 6.93 1.15 9.2.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.74 2.98-.74 1.39 0 1.78.74 3 .72 1.24-.02 2.02-1.13 2.78-2.24.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.4-.92-2.43-3.65zM14.1 5.9c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.68-1.09 1.77-.95 2.81 1.02.08 2.05-.52 2.68-1.28z"/>
+              </svg>
+              download for iphone
+            </a>
+          </div>
+
+          <!-- waitlist mode -->
+          <div class="only-waitlist signup" id="notify">
+            <form class="signup-form" data-buttondown
+                  action="https://buttondown.com/api/emails/embed-subscribe/cloudlist.app"
+                  method="post" target="bd-sink">
+              <input type="email" name="email" placeholder="your email" aria-label="your email" required>
+              <button type="submit" class="button button--glass">get notified</button>
+            </form>
+            <div class="signup-done" hidden>
+              <p>you're on the list.</p>
+              <p class="signup-done-note">we'll email you once, when it's ready.</p>
+            </div>
+            <p class="signup-error" hidden>that didn't go through. try again, or email hello@cloudlist.app</p>
+            <p class="cta-note">one email when it launches. nothing else.</p>
+          </div>
         </div>
       </div>
       <div class="hero-phone lift" style="--lift:3">
@@ -250,6 +270,10 @@
       </div>
 
       <div class="faq reveal">
+        <div class="qa only-waitlist">
+          <button class="qa-q" aria-expanded="false"><span>when does it launch?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-a"><div><p>very soon. leave your email at the top and you'll get one message the day it opens, and nothing after that unless you want it.</p></div></div>
+        </div>
         <div class="qa">
           <button class="qa-q" aria-expanded="false"><span>is it free?</span><span class="qa-icon" aria-hidden="true"></span></button>
           <div class="qa-a"><div><p>the free version is properly usable: 10 active tasks, one break-it-down and one brain dump a day, seven days of history, and all three themes. pro removes the limits and adds focus sounds, priority flagging, full month history, and a weekly streak save. there's a seven day trial if you want to try it.</p></div></div>
@@ -285,18 +309,43 @@
   <!-- ============ 7. final cta ============ -->
   <section class="band band--lavender">
     <div class="wrap center final">
-      <h2 class="display-sm reveal section-head">give it a try</h2>
-      <p class="sub sub--wide reveal">free to start, no card, and you don't have to decide anything to begin.</p>
-      <div class="reveal">
-        <a class="button button--glass" href="https://apps.apple.com/app/id6772194035" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="button-mark">
-            <path d="M16.36 12.72c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.28-1.61 2.8-.41 6.93 1.15 9.2.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.74 2.98-.74 1.39 0 1.78.74 3 .72 1.24-.02 2.02-1.13 2.78-2.24.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.4-.92-2.43-3.65zM14.1 5.9c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.68-1.09 1.77-.95 2.81 1.02.08 2.05-.52 2.68-1.28z"/>
-          </svg>
-          download for iphone
-        </a>
+      <!-- download mode -->
+      <div class="only-download">
+        <h2 class="display-sm reveal section-head">give it a try</h2>
+        <p class="sub sub--wide reveal">free to start, no card, and you don't have to decide anything to begin.</p>
+        <div class="reveal">
+          <a class="button button--glass" href="https://apps.apple.com/app/id6772194035" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="button-mark">
+              <path d="M16.36 12.72c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.28-1.61 2.8-.41 6.93 1.15 9.2.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.74 2.98-.74 1.39 0 1.78.74 3 .72 1.24-.02 2.02-1.13 2.78-2.24.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.4-.92-2.43-3.65zM14.1 5.9c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.68-1.09 1.77-.95 2.81 1.02.08 2.05-.52 2.68-1.28z"/>
+            </svg>
+            download for iphone
+          </a>
+        </div>
+      </div>
+
+      <!-- waitlist mode -->
+      <div class="only-waitlist">
+        <h2 class="display-sm reveal section-head">be there when it opens</h2>
+        <p class="sub sub--wide reveal">leave your email and we'll tell you the moment cloudlist is ready.</p>
+        <div class="signup reveal">
+          <form class="signup-form" data-buttondown
+                action="https://buttondown.com/api/emails/embed-subscribe/cloudlist.app"
+                method="post" target="bd-sink">
+            <input type="email" name="email" placeholder="your email" aria-label="your email" required>
+            <button type="submit" class="button button--glass">get notified</button>
+          </form>
+          <div class="signup-done" hidden>
+            <p>you're on the list.</p>
+            <p class="signup-done-note">we'll email you once, when it's ready.</p>
+          </div>
+          <p class="signup-error" hidden>that didn't go through. try again, or email hello@cloudlist.app</p>
+          <p class="cta-note">one email when it launches. nothing else.</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <iframe name="bd-sink" style="display:none" aria-hidden="true" tabindex="-1" title="form target"></iframe>
 
 </main>
 
@@ -313,7 +362,8 @@
       </div>
 
       <nav class="footer-col" aria-label="app">
-        <a href="https://apps.apple.com/app/id6772194035" target="_blank" rel="noopener">app store</a>
+        <a class="only-download" href="https://apps.apple.com/app/id6772194035" target="_blank" rel="noopener">app store</a>
+        <a class="only-waitlist" href="#notify">get notified</a>
         <a href="#faq">faq</a>
       </nav>
 
@@ -481,6 +531,31 @@
 
       qa.classList.toggle('is-open', !isOpen);
       btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+
+  // ---------- waitlist form ----------
+  // posts natively into a hidden iframe. fetch() hung in safari on v1,
+  // so this pattern is deliberate. do not "modernise" it.
+  Array.prototype.forEach.call(document.querySelectorAll('form[data-buttondown]'), function (form) {
+    form.addEventListener('submit', function () {
+      var input = form.querySelector('input[type="email"]');
+      if (!input.value) return;
+
+      var wrap = form.parentNode;
+      var done = wrap.querySelector('.signup-done');
+      var note = wrap.querySelector('.cta-note');
+      var btn  = form.querySelector('button');
+
+      // never disable the input: disabled fields are dropped from the post
+      btn.textContent = 'got it';
+      input.readOnly = true;
+
+      window.setTimeout(function () {
+        form.hidden = true;
+        if (note) note.hidden = true;
+        if (done) done.hidden = false;
+      }, 400);
     });
   });
 
