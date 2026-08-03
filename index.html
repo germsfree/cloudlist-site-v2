@@ -179,6 +179,14 @@
 
         </div>
       </div>
+
+      <div class="pin-dots" aria-hidden="true">
+        <button class="pin-dot is-on" data-i="0"></button>
+        <button class="pin-dot" data-i="1"></button>
+        <button class="pin-dot" data-i="2"></button>
+        <button class="pin-dot" data-i="3"></button>
+        <button class="pin-dot" data-i="4"></button>
+      </div>
     </div>
   </section>
 
@@ -508,12 +516,65 @@
   // ---------- flip cards: tap on touch, hover handled in css ----------
   var cards = document.querySelectorAll('.card');
   Array.prototype.forEach.call(cards, function (card) {
-    var flip = function () { card.classList.toggle('is-flipped'); };
+    var flip = function () {
+      var wasFlipped = card.classList.contains('is-flipped');
+      // close every other card first, only one open at a time
+      Array.prototype.forEach.call(cards, function (other) {
+        other.classList.remove('is-flipped');
+      });
+      if (!wasFlipped) card.classList.add('is-flipped');
+    };
     card.addEventListener('click', flip);
     card.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
     });
   });
+
+  // ---------- mobile feature carousel ----------
+  var track = document.querySelector('.pin-blocks');
+  var dots  = document.querySelectorAll('.pin-dot');
+  var slides = document.querySelectorAll('.pin-block');
+
+  if (track && dots.length && slides.length) {
+    var isCarousel = function () {
+      return window.getComputedStyle(track).flexDirection === 'row';
+    };
+
+    var setDot = function (i) {
+      Array.prototype.forEach.call(dots, function (d, n) {
+        d.classList.toggle('is-on', n === i);
+      });
+    };
+
+    var syncing = false;
+    track.addEventListener('scroll', function () {
+      if (!isCarousel() || syncing) return;
+      syncing = true;
+      window.requestAnimationFrame(function () {
+        var mid = track.scrollLeft + track.clientWidth / 2;
+        var best = 0, bestGap = Infinity;
+        Array.prototype.forEach.call(slides, function (s, n) {
+          var c = s.offsetLeft + s.offsetWidth / 2;
+          var gap = Math.abs(c - mid);
+          if (gap < bestGap) { bestGap = gap; best = n; }
+        });
+        setDot(best);
+        syncing = false;
+      });
+    }, { passive: true });
+
+    Array.prototype.forEach.call(dots, function (d) {
+      d.addEventListener('click', function () {
+        var i = parseInt(d.getAttribute('data-i'), 10);
+        var s = slides[i];
+        if (!s) return;
+        track.scrollTo({
+          left: s.offsetLeft - (track.clientWidth - s.offsetWidth) / 2,
+          behavior: reduced ? 'auto' : 'smooth'
+        });
+      });
+    });
+  }
 
   // ---------- faq accordion ----------
   var questions = document.querySelectorAll('.qa-q');

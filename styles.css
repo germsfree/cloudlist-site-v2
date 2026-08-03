@@ -422,6 +422,10 @@ a { color: inherit; }
 
 .phone--inline { display: none; }
 
+/* carousel dots — mobile only, hidden on desktop */
+.pin-dots { display: none; }
+
+
 /* ========================================
    4. adhd flip cards
    ======================================== */
@@ -793,13 +797,76 @@ footer {
 
   .button { font-size: 16px; padding: 15px 28px; }
 
-  #how .section-head { margin-bottom: 52px; }
+  /* how it works becomes a swipe carousel: five stacked
+     full-height blocks was an endless scroll on a phone */
+  #how .section-head { margin-bottom: 34px; }
   .pin-grid { grid-template-columns: 1fr; gap: 0; }
   .pin-phone { display: none; }
-  .pin-block { min-height: 0; padding: 0 0 76px; }
-  .pin-blocks .pin-block:last-child { padding-bottom: 0; }
-  .phone--inline { display: block; width: min(248px, 100%); margin: 34px auto 0; }
-  .step { font-size: 15px; }
+
+  .pin-blocks {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 14px;
+    /* full bleed past the wrap padding so cards peek at the edges */
+    margin: 0 -22px;
+    padding: 6px 22px 4px;
+  }
+
+  .pin-blocks::-webkit-scrollbar { display: none; }
+
+  .pin-block {
+    flex: 0 0 84%;
+    min-height: 0;
+    scroll-snap-align: center;
+    padding: 28px 22px 30px;
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.42);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 26px rgba(58, 42, 46, 0.06);
+    justify-content: flex-start;
+  }
+
+  .pin-blocks .pin-block:first-child,
+  .pin-blocks .pin-block:last-child { padding: 28px 22px 30px; }
+
+  .step { font-size: 14px; margin-bottom: 14px; }
+  .pin-block h3 { font-size: 26px; margin-bottom: 14px; }
+  .pin-block .body { font-size: 15.5px; line-height: 1.68; }
+
+  .phone--inline { display: block; width: 172px; margin: 24px auto 0; }
+  .phone--inline .phone,
+  .phone--inline { border-radius: 30px; padding: 6px; }
+  .phone--inline img { border-radius: 25px; }
+
+  /* dots */
+  .pin-dots {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 26px;
+  }
+
+  .pin-dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(150, 105, 126, 0.28);
+    cursor: pointer;
+    transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+  }
+
+  .pin-dot.is-on {
+    background: var(--accent-dk);
+    transform: scale(1.35);
+  }
 
   .problem .section-head { margin-bottom: 40px; }
   .line--em { margin-top: 26px !important; }
