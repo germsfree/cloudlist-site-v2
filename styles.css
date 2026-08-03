@@ -837,9 +837,12 @@ footer {
 
   .step { font-size: 14px; margin-bottom: 14px; }
   .pin-block h3 { font-size: 26px; margin-bottom: 14px; }
-  .pin-block .body { font-size: 15.5px; line-height: 1.68; }
+  .pin-block .body { font-size: 15.5px; line-height: 1.68; margin-bottom: 24px; }
 
-  .phone--inline { display: block; width: 172px; margin: 24px auto 0; }
+  /* cards stretch to the tallest, and margin-top:auto pins every
+     phone to the bottom edge, so it lands in the same place on all
+     five regardless of how long the copy runs */
+  .phone--inline { display: block; width: 172px; margin: auto auto 0; }
   .phone--inline .phone,
   .phone--inline { border-radius: 30px; padding: 6px; }
   .phone--inline img { border-radius: 25px; }
