@@ -45,15 +45,22 @@
   <section class="band band--peach hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="wordmark reveal">cloudlist</p>
-        <h1 class="display reveal" data-delay="1">a to-do list that actually gets your brain</h1>
-        <p class="lede reveal" data-delay="2">built by someone with adhd,<br>for people with adhd.</p>
-        <div class="reveal" data-delay="3">
-          <a class="button" href="https://apps.apple.com/app/id6772194035" target="_blank" rel="noopener">download for iphone</a>
-          <p class="cta-note">on the app store. free to start.</p>
+        <div class="wordmark lift" style="--lift:1">
+          <img src="icon.png" alt="" width="34" height="34">
+          <span>cloudlist</span>
+        </div>
+        <h1 class="display lift" style="--lift:2">a to-do list that actually gets your brain</h1>
+        <p class="lede lift" style="--lift:3">built by someone with adhd,<br>for people with adhd.</p>
+        <div class="lift" style="--lift:4">
+          <a class="button button--glass" href="https://apps.apple.com/app/id6772194035" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="button-mark">
+              <path d="M16.36 12.72c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.28-1.61 2.8-.41 6.93 1.15 9.2.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.74 2.98-.74 1.39 0 1.78.74 3 .72 1.24-.02 2.02-1.13 2.78-2.24.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.4-.92-2.43-3.65zM14.1 5.9c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.68-1.09 1.77-.95 2.81 1.02.08 2.05-.52 2.68-1.28z"/>
+            </svg>
+            download for iphone
+          </a>
         </div>
       </div>
-      <div class="hero-phone reveal" data-delay="2">
+      <div class="hero-phone lift" style="--lift:3">
         <div class="phone">
           <img src="screen-today.png" alt="the cloudlist today screen, showing tasks sorted into now and next">
         </div>
@@ -62,29 +69,35 @@
   </section>
 
   <!-- ============ 2. the problem ============ -->
-  <section class="band band--blush">
-    <div class="wrap narrow center">
-      <h2 class="display-sm reveal">most to-do apps assume you wake up the same person every day</h2>
+  <section class="band band--blush problem">
+    <div class="clouds" aria-hidden="true">
+      <svg class="cloud cloud--1" viewBox="0 0 120 70"><path d="M28 62c-12 0-22-8-22-19S16 24 28 24c2-12 13-21 26-21 12 0 22 7 25 18 2-.6 4-1 6-1 11 0 20 8 20 19s-9 19-20 19H28z"/></svg>
+      <svg class="cloud cloud--2" viewBox="0 0 120 70"><path d="M28 62c-12 0-22-8-22-19S16 24 28 24c2-12 13-21 26-21 12 0 22 7 25 18 2-.6 4-1 6-1 11 0 20 8 20 19s-9 19-20 19H28z"/></svg>
+      <svg class="cloud cloud--3" viewBox="0 0 120 70"><path d="M28 62c-12 0-22-8-22-19S16 24 28 24c2-12 13-21 26-21 12 0 22 7 25 18 2-.6 4-1 6-1 11 0 20 8 20 19s-9 19-20 19H28z"/></svg>
+      <svg class="cloud cloud--4" viewBox="0 0 120 70"><path d="M28 62c-12 0-22-8-22-19S16 24 28 24c2-12 13-21 26-21 12 0 22 7 25 18 2-.6 4-1 6-1 11 0 20 8 20 19s-9 19-20 19H28z"/></svg>
+    </div>
+
+    <div class="wrap narrow center problem-copy">
+      <h2 class="display-sm reveal section-head">most to-do apps assume you wake up the same person every day</h2>
       <p class="body reveal">so the list stays the same whether you slept nine hours or three. the task you dreaded on monday is still sitting there on thursday, in the same font, at the same size, asking the same thing.</p>
       <p class="body reveal">and when you can't face it, the app has nothing to say except a number going up.</p>
-      <p class="pull reveal">cloudlist starts somewhere else. it asks how you are first.</p>
+      <p class="pull reveal">cloudlist starts somewhere else.<br><strong>it asks how you are first.</strong></p>
     </div>
   </section>
 
   <!-- ============ 3. how it works ============ -->
   <section class="band band--pink" id="how">
     <div class="wrap">
-      <p class="eyebrow center reveal">how it works</p>
+      <h2 class="display-sm center reveal section-head">how it works</h2>
 
       <div class="pin-grid">
-        <!-- sticky phone, desktop only -->
         <div class="pin-phone" aria-hidden="true">
-          <div class="phone">
-            <img id="pinImg" src="screen-checkin.png" alt="">
+          <div class="phone phone--stack">
+            <img class="pin-img is-on" src="screen-checkin.png" alt="">
+            <img class="pin-img" src="screen-today.png" alt="">
           </div>
         </div>
 
-        <!-- scrolling blocks -->
         <div class="pin-blocks">
 
           <article class="pin-block" data-screen="screen-checkin.png">
@@ -130,94 +143,109 @@
   <!-- ============ 4. built for adhd ============ -->
   <section class="band band--lavender" id="why">
     <div class="wrap">
-      <h2 class="display-sm center reveal">built for how adhd actually works</h2>
-      <p class="sub center reveal">four things that make the day harder than it looks, and what cloudlist does about each.</p>
+      <h2 class="display-sm center reveal section-head">built for how adhd actually works</h2>
+      <p class="sub sub--wide center reveal">four things that make the day harder than it looks, and what cloudlist does about each.</p>
 
       <div class="cards">
-        <article class="card reveal">
+        <article class="card reveal" tabindex="0">
           <p class="card-num">01</p>
           <h3>task initiation paralysis</h3>
-          <p>knowing what to do and being unable to start is not laziness, it's the gap between intention and action. splitting a task into steps closes that gap.</p>
+          <div class="card-body"><p>knowing what to do and being unable to start is not laziness, it's the gap between intention and action. splitting a task into steps closes that gap.</p></div>
         </article>
-        <article class="card reveal">
+        <article class="card reveal" tabindex="0">
           <p class="card-num">02</p>
           <h3>time blindness</h3>
-          <p>half an hour and half a day feel the same from the inside. every task carries a time estimate, and focus mode runs a timer sized to the attention span you have.</p>
+          <div class="card-body"><p>half an hour and half a day feel the same from the inside. every task carries a time estimate, and focus mode runs a timer sized to the attention span you have.</p></div>
         </article>
-        <article class="card reveal">
+        <article class="card reveal" tabindex="0">
           <p class="card-num">03</p>
           <h3>out of sight, out of mind</h3>
-          <p>a task you can't see may as well not exist. anything untouched for five days comes back on its own, without a telling-off.</p>
+          <div class="card-body"><p>a task you can't see may as well not exist. anything untouched for five days comes back on its own, without a telling-off.</p></div>
         </article>
-        <article class="card reveal">
+        <article class="card reveal" tabindex="0">
           <p class="card-num">04</p>
           <h3>overwhelm shutdown</h3>
-          <p>twenty things reads as one impossible thing. cloudlist shows you what fits and quietly holds the rest until you're ready.</p>
+          <div class="card-body"><p>twenty things reads as one impossible thing. cloudlist shows you what fits and quietly holds the rest until you're ready.</p></div>
         </article>
       </div>
+      <p class="cards-hint center">hover a card to read more</p>
     </div>
   </section>
 
   <!-- ============ 5. founder ============ -->
-  <section class="band band--cream">
-    <div class="wrap founder-grid">
-      <div class="reveal">
-        <h2 class="display-sm">why cloudlist exists</h2>
-      </div>
-      <div class="founder-copy">
-        <p class="body reveal">hi, i'm germaine. i built cloudlist because nothing else worked for my adhd brain.</p>
-        <p class="body reveal">every task app assumed i'd remember to open it. every planner assumed i had linear focus. every productivity system assumed guilt and streaks would motivate me, and instead they crushed me on the days i couldn't keep up.</p>
-        <p class="body reveal">after years of trying to make other apps work, a friend told me to just build the thing i needed. so i did.</p>
-        <p class="body reveal">cloudlist is for people whose brains work like mine. warm, forgiving, quietly effective. made in melbourne.</p>
+  <section class="band band--cream founder">
+    <div class="wrap">
+      <div class="founder-panel reveal">
+        <div class="founder-mark" aria-hidden="true">
+          <img src="icon.png" alt="" width="60" height="60">
+        </div>
+        <p class="founder-open">i built cloudlist because nothing else worked for my adhd brain.</p>
+        <div class="founder-body">
+          <p>every task app assumed i'd remember to open it. every planner assumed i had linear focus. every productivity system assumed guilt and streaks would motivate me, and instead they crushed me on the days i couldn't keep up.</p>
+          <p>after years of trying to make other apps work, a friend told me to just build the thing i needed. so i did.</p>
+          <p>cloudlist is for people whose brains work like mine. warm, forgiving, quietly effective.</p>
+        </div>
+        <div class="founder-sign">
+          <p class="founder-name">germaine</p>
+          <p class="founder-role">solo founder · made in melbourne 🌥</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ 6. faq ============ -->
   <section class="band band--pink" id="faq">
-    <div class="wrap narrow">
-      <h2 class="display-sm center reveal">questions</h2>
+    <div class="wrap faq-grid">
+      <div class="faq-head">
+        <h2 class="display-sm reveal section-head">questions</h2>
+        <p class="sub reveal">anything else, email <a href="mailto:hello@cloudlist.app">hello@cloudlist.app</a></p>
+      </div>
 
       <div class="faq reveal">
-        <details>
-          <summary>is it free?</summary>
-          <div class="answer"><p>the free version is properly usable: 10 active tasks, one break-it-down and one brain dump a day, seven days of history, and all three themes. pro removes the limits and adds focus sounds, priority flagging, full month history, and a weekly streak save. there's a seven day trial if you want to try it.</p></div>
-        </details>
-        <details>
-          <summary>do i need a diagnosis?</summary>
-          <div class="answer"><p>no. cloudlist was built around adhd, but nothing about it requires a diagnosis. if the way it works makes sense to you, it's for you.</p></div>
-        </details>
-        <details>
-          <summary>is there a focus timer?</summary>
-          <div class="answer"><p>yes. pick a task and focus mode runs a pomodoro sized to the attention span you set during onboarding. pro adds ambient sound.</p></div>
-        </details>
-        <details>
-          <summary>is it on android?</summary>
-          <div class="answer"><p>not yet. iphone only for now.</p></div>
-        </details>
-        <details>
-          <summary>what happens to what i type into the ai features?</summary>
-          <div class="answer"><p>break it down and brain dump send your text to anthropic's claude to generate a response, and nothing else. it isn't stored and isn't used for training. both ask for your consent during onboarding and can be turned off anytime in settings.</p></div>
-        </details>
-        <details>
-          <summary>what if i stop using it for a while?</summary>
-          <div class="answer"><p>nothing bad happens. your tasks are still there, your streak is handled gently, and there's no guilt screen waiting for you.</p></div>
-        </details>
-        <details>
-          <summary>can i cancel?</summary>
-          <div class="answer"><p>anytime, through your apple id settings. no flow designed to wear you down.</p></div>
-        </details>
+        <div class="qa">
+          <button class="qa-q" aria-expanded="false"><span>is it free?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-a"><div><p>the free version is properly usable: 10 active tasks, one break-it-down and one brain dump a day, seven days of history, and all three themes. pro removes the limits and adds focus sounds, priority flagging, full month history, and a weekly streak save. there's a seven day trial if you want to try it.</p></div></div>
+        </div>
+        <div class="qa">
+          <button class="qa-q" aria-expanded="false"><span>do i need a diagnosis?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-a"><div><p>no. cloudlist was built around adhd, but nothing about it requires a diagnosis. if the way it works makes sense to you, it's for you.</p></div></div>
+        </div>
+        <div class="qa">
+          <button class="qa-q" aria-expanded="false"><span>is there a focus timer?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-a"><div><p>yes. pick a task and focus mode runs a pomodoro sized to the attention span you set during onboarding. pro adds ambient sound.</p></div></div>
+        </div>
+        <div class="qa">
+          <button class="qa-q" aria-expanded="false"><span>is it on android?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-a"><div><p>not yet. iphone only for now.</p></div></div>
+        </div>
+        <div class="qa">
+          <button class="qa-q" aria-expanded="false"><span>what happens to what i type into the ai features?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-a"><div><p>break it down and brain dump send your text to anthropic's claude to generate a response, and nothing else. it isn't stored and isn't used for training. both ask for your consent during onboarding and can be turned off anytime in settings.</p></div></div>
+        </div>
+        <div class="qa">
+          <button class="qa-q" aria-expanded="false"><span>what if i stop using it for a while?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-a"><div><p>nothing bad happens. your tasks are still there, your streak is handled gently, and there's no guilt screen waiting for you.</p></div></div>
+        </div>
+        <div class="qa">
+          <button class="qa-q" aria-expanded="false"><span>can i cancel?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-a"><div><p>anytime, through your apple id settings. no flow designed to wear you down.</p></div></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ 7. final cta ============ -->
   <section class="band band--lavender">
-    <div class="wrap narrow center final">
-      <h2 class="display-sm reveal">give it a try</h2>
-      <p class="sub reveal">free to start. no card, and you don't have to decide anything to begin.</p>
+    <div class="wrap center final">
+      <h2 class="display-sm reveal section-head">give it a try</h2>
+      <p class="sub sub--wide reveal">free to start, no card, and you don't have to decide anything to begin.</p>
       <div class="reveal">
-        <a class="button" href="https://apps.apple.com/app/id6772194035" target="_blank" rel="noopener">download for iphone</a>
+        <a class="button button--glass" href="https://apps.apple.com/app/id6772194035" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="button-mark">
+            <path d="M16.36 12.72c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.28-1.61 2.8-.41 6.93 1.15 9.2.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.74 2.98-.74 1.39 0 1.78.74 3 .72 1.24-.02 2.02-1.13 2.78-2.24.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.4-.92-2.43-3.65zM14.1 5.9c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.68-1.09 1.77-.95 2.81 1.02.08 2.05-.52 2.68-1.28z"/>
+          </svg>
+          download for iphone
+        </a>
       </div>
     </div>
   </section>
@@ -279,67 +307,104 @@
 (function () {
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ---- scroll reveal ----
+  // ---------- hero load sequence ----------
+  // fires on load rather than on scroll, so it is actually seen
+  window.requestAnimationFrame(function () {
+    document.body.classList.add('is-ready');
+  });
+
+  // ---------- scroll reveal ----------
   var reveals = document.querySelectorAll('.reveal');
   if (reduced || !('IntersectionObserver' in window)) {
-    reveals.forEach(function (el) { el.classList.add('is-visible'); });
+    Array.prototype.forEach.call(reveals, function (el) { el.classList.add('is-visible'); });
   } else {
-    reveals.forEach(function (el) {
-      var d = el.getAttribute('data-delay');
-      if (d) el.style.transitionDelay = (d * 0.09) + 's';
-    });
     var revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          revealObserver.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
       });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.15 });
-    reveals.forEach(function (el) { revealObserver.observe(el); });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+
+    var seen = [];
+    Array.prototype.forEach.call(reveals, function (el) {
+      var parent = el.parentNode;
+      var i = seen.indexOf(parent);
+      if (i === -1) { seen.push(parent); i = seen.length - 1; seen[i] = parent; parent.__n = 0; }
+      el.style.transitionDelay = ((parent.__n || 0) * 0.08) + 's';
+      parent.__n = (parent.__n || 0) + 1;
+      revealObserver.observe(el);
+    });
   }
 
-  // ---- pinned phone: swap screen as blocks pass ----
-  var pinImg = document.getElementById('pinImg');
+  // ---------- pinned phone: crossfade between two stacked layers ----------
+  var stack = document.querySelector('.phone--stack');
   var blocks = document.querySelectorAll('.pin-block');
 
-  if (pinImg && blocks.length && 'IntersectionObserver' in window) {
-    // preload so the swap never flashes
+  if (stack && blocks.length && 'IntersectionObserver' in window) {
+    var layers = stack.querySelectorAll('.pin-img');
+    var top = 0;
+    var shown = layers[0].getAttribute('src');
+
     Array.prototype.forEach.call(blocks, function (b) {
-      var img = new Image();
-      img.src = b.getAttribute('data-screen');
+      var pre = new Image();
+      pre.src = b.getAttribute('data-screen');
     });
 
-    var current = null;
-    var setScreen = function (src) {
-      if (src === current) return;
-      current = src;
-      if (reduced) { pinImg.src = src; return; }
-      pinImg.classList.add('is-swapping');
-      window.setTimeout(function () {
-        pinImg.src = src;
-        pinImg.classList.remove('is-swapping');
-      }, 180);
+    var swapTo = function (src) {
+      if (src === shown) return;
+      shown = src;
+      var next = (top + 1) % 2;
+      var el = layers[next];
+      var reveal = function () {
+        el.classList.add('is-on');
+        layers[top].classList.remove('is-on');
+        top = next;
+      };
+      // only fade once the new image has actually decoded
+      el.src = src;
+      if (el.decode) {
+        el.decode().then(reveal).catch(reveal);
+      } else {
+        el.onload = reveal;
+      }
     };
 
     var blockObserver = new IntersectionObserver(function (entries) {
-      // pick the entry closest to the middle of the viewport
       var best = null;
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         if (!best || entry.intersectionRatio > best.intersectionRatio) best = entry;
       });
-      if (best) setScreen(best.target.getAttribute('data-screen'));
-    }, { rootMargin: '-35% 0px -35% 0px', threshold: [0.1, 0.5, 0.9] });
+      if (best) swapTo(best.target.getAttribute('data-screen'));
+    }, { rootMargin: '-40% 0px -40% 0px', threshold: [0, 0.25, 0.6, 1] });
 
     Array.prototype.forEach.call(blocks, function (b) { blockObserver.observe(b); });
   }
 
-  // ---- nav: condense after scrolling past hero ----
+  // ---------- faq accordion ----------
+  var questions = document.querySelectorAll('.qa-q');
+  Array.prototype.forEach.call(questions, function (btn) {
+    btn.addEventListener('click', function () {
+      var qa = btn.parentNode;
+      var isOpen = qa.classList.contains('is-open');
+
+      Array.prototype.forEach.call(document.querySelectorAll('.qa.is-open'), function (other) {
+        if (other !== qa) {
+          other.classList.remove('is-open');
+          other.querySelector('.qa-q').setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      qa.classList.toggle('is-open', !isOpen);
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+
+  // ---------- nav shadow ----------
   var nav = document.querySelector('.nav');
   var onScroll = function () {
-    if (window.scrollY > 40) nav.classList.add('is-stuck');
-    else nav.classList.remove('is-stuck');
+    nav.classList.toggle('is-stuck', window.scrollY > 40);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
