@@ -322,7 +322,7 @@ a { color: inherit; }
 
 /* staged lines read as a paced thought rather than a paragraph block */
 .problem-lines {
-  max-width: 700px;
+  max-width: 760px;
   margin: 0 auto;
   text-align: center;
 }
@@ -330,19 +330,25 @@ a { color: inherit; }
 .line {
   font-size: clamp(17px, 1.9vw, 20px);
   color: var(--ink-soft);
-  line-height: 1.62;
-  padding: 15px 0;
+  line-height: 1.6;
   text-wrap: balance;
 }
 
+/* the first two sit close together, they are one thought */
+.line + .line { margin-top: 8px; }
+
+/* the italic turn and the closing beat get their own air */
 .line--em {
   font-family: var(--serif);
   font-style: italic;
   font-size: clamp(19px, 2.1vw, 23px);
   color: var(--ink);
+  margin-top: 34px !important;
 }
 
-.problem-turn { margin-top: 76px; text-align: center; }
+.line--em + .line { margin-top: 34px; }
+
+.problem-turn { margin-top: 68px; text-align: center; }
 
 .turn-rule {
   display: block;
@@ -796,8 +802,9 @@ footer {
   .step { font-size: 15px; }
 
   .problem .section-head { margin-bottom: 40px; }
-  .line { padding: 12px 0; }
-  .problem-turn { margin-top: 54px; }
+  .line--em { margin-top: 26px !important; }
+  .line--em + .line { margin-top: 26px; }
+  .problem-turn { margin-top: 52px; }
 
   .cards { grid-template-columns: 1fr; gap: 16px; margin-top: 46px; }
   .card { height: 210px; }
