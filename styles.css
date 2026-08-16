@@ -1140,3 +1140,108 @@ footer {
   .legal-page p,
   .legal-page ul li { font-size: 16px; }
 }
+
+/* ========================================
+   support page (support.html)
+   ----------------------------------------
+   builds on .legal-page, which supplies the
+   measure, back link, headings and links.
+   these rules add the softer, warmer
+   treatment a help page wants: a gradient
+   wash behind the header, a contact card,
+   and questions set as cards rather than
+   a run of legal headings.
+   ======================================== */
+
+body.support {
+  background:
+    radial-gradient(1100px 520px at 50% -160px, var(--peach) 0%, rgba(255, 232, 214, 0) 62%),
+    radial-gradient(760px 420px at 88% 8%, var(--pink) 0%, rgba(251, 220, 232, 0) 58%),
+    var(--cream);
+  background-repeat: no-repeat;
+}
+
+.support-page .updated {
+  display: inline-block;
+  margin-bottom: 40px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+
+/* the one thing we want people to do */
+.support-card {
+  margin: 0 0 56px;
+  padding: 30px 28px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(12px) saturate(1.25);
+  -webkit-backdrop-filter: blur(12px) saturate(1.25);
+  box-shadow: 0 10px 30px rgba(58, 42, 46, 0.07);
+}
+
+.support-card h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.support-card p:last-child { margin-bottom: 0; }
+
+.support-mail {
+  display: inline-block;
+  margin-top: 6px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--accent-dk);
+  text-decoration: underline;
+  text-decoration-color: rgba(150, 105, 126, 0.3);
+  text-underline-offset: 5px;
+  transition: text-decoration-color 0.2s var(--ease);
+}
+
+.support-mail:hover { text-decoration-color: var(--accent-dk); }
+
+/* each question its own quiet card */
+.support-page .qa-block {
+  padding: 24px 26px;
+  margin-bottom: 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.4);
+  transition: background 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.support-page .qa-block:hover {
+  background: rgba(255, 255, 255, 0.62);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.support-page .qa-block h2 {
+  margin: 0 0 8px;
+  font-size: 21px;
+}
+
+.support-page .qa-block p { margin-bottom: 0; }
+.support-page .qa-block p + p { margin-top: 12px; }
+
+.support-foot {
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.support-foot p { margin-bottom: 8px; }
+
+@media (max-width: 760px) {
+  .support-card { padding: 24px 22px; margin-bottom: 44px; border-radius: 20px; }
+  .support-mail { font-size: 19px; }
+  .support-page .qa-block { padding: 20px 20px; border-radius: 18px; }
+  .support-page .qa-block h2 { font-size: 19px; }
+}
